@@ -14,23 +14,9 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the default starter.
-
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
-
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+<a href="https://www.youtube.com/watch?v=DXJO3AraeMQ">
+  <img src="https://github.com/michaelilkanayev1997/Gatsby-blog/blob/main/assets/93651794/bc97154f-d0b7-499b-85b8-81fa42979261.png" alt="Video Thumbnail" width="480" height="270">
+</a>
 
 1.  **Open the source code and start editing!**
 
@@ -48,19 +34,7 @@ Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
@@ -84,16 +58,7 @@ A quick look at the top-level files and directories you'll see in a typical Gats
 
 ## 🎓 Learning Gatsby
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
 ## 💫 Deploy
 
-[Build, Deploy, and Host On Netlify](https://netlify.com)
 
-The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
