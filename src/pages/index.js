@@ -20,6 +20,12 @@ const Title = styled.h1`
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }
+
+  @media (max-width: 400px) {
+    font-size: 1.3rem;
+    text-underline-offset: 5px;
+    text-decoration-style: unset;
+  }
 `
 
 const TotalCount = styled.h4`
@@ -103,7 +109,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <StyledIndexPage>
-        <Title>Michael's Blog</Title>
+        <Title>Michael Ilkanayev's Blog</Title>
         <TotalCount>{data.allMarkdownRemark.totalCount} Post's</TotalCount>
         <BlogList>
           {data.allMarkdownRemark.edges.map(({ node }) => (
