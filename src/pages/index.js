@@ -4,37 +4,95 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { styled } from "styled-components"
 
+const StyledIndexPage = styled.div`
+  text-align: center;
+`
+
+const Title = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-decoration: underline;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`
+
+const TotalCount = styled.h4`
+  font-size: 1.2rem;
+  color: #666;
+  text-decoration: underline;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+`
+
+const BlogList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+`
+
+const BlogCard = styled.div`
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+  }
+`
+
 const BlogLink = styled(Link)`
   text-decoration: none;
 `
+
 const BlogTitle = styled.h3`
-  margin-bottom: 20px;
-  color: blue;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #007bff;
 `
 
-export default ({ data }) => {
-  console.log(data)
+const BlogExcerpt = styled.p`
+  font-size: 1rem;
+  color: #555;
+`
 
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <div>
-        <h1>Michael's Projects</h1>
-        <h4>{data.allMarkdownRemark.totalCount}</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div ket={node.id}>
-            <BlogLink to={node.fields.slug}>
-              <BlogTitle>
-                {node.frontmatter.title} - {node.frontmatter.date}
-              </BlogTitle>
-            </BlogLink>
-            <p>{node.excerpt}</p>
-          </div>
-        ))}
-      </div>
+      <StyledIndexPage>
+        <Title>Michael's Projects</Title>
+        <TotalCount>{data.allMarkdownRemark.totalCount} Projects</TotalCount>
+        <BlogList>
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <BlogCard key={node.id}>
+              <BlogLink to={node.fields.slug}>
+                <BlogTitle>
+                  {node.frontmatter.title} - {node.frontmatter.date}
+                </BlogTitle>
+              </BlogLink>
+              <BlogExcerpt>{node.excerpt}</BlogExcerpt>
+            </BlogCard>
+          ))}
+        </BlogList>
+      </StyledIndexPage>
     </Layout>
   )
 }
+
+export default IndexPage
 
 export const query = graphql`
   query {
