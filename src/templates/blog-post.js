@@ -15,11 +15,11 @@ const StyledBlogPost = styled.div`
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #333333;
+    color: #007bff;
+    text-decoration: underline;
 
     @media (max-width: 768px) {
-      font-size: 1.5rem;
-      padding: 5px;
+      font-size: 1.3rem;
       margin-bottom: 0.8rem;
     }
   }
@@ -29,7 +29,17 @@ const StyledBlogPost = styled.div`
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: #666666;
-
+    text-align: center;
+    max-width: 900px;
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+  }
+  h2 {
+    text-decoration: underline;
+    text-decoration-color: #999;
+    text-underline-offset: 2px;
     @media (max-width: 768px) {
       font-size: 1rem;
       margin-bottom: 1rem;
@@ -51,8 +61,32 @@ const StyledBlogPost = styled.div`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 
-    @media (max-width: 768px) {
-      height: 200px;
+    @media (max-width: 651px) {
+      height: 270px;
+    }
+    @media (max-width: 556px) {
+      height: 250px;
+    }
+    @media (max-width: 538px) {
+      height: 230px;
+    }
+    @media (max-width: 503px) {
+      height: 210px;
+    }
+    @media (max-width: 458px) {
+      height: 190px;
+    }
+    @media (max-width: 430px) {
+      height: 170px;
+    }
+    @media (max-width: 388px) {
+      height: 150px;
+    }
+    @media (max-width: 356px) {
+      height: 130px;
+    }
+    @media (max-width: 327px) {
+      height: 115px;
     }
   }
 
