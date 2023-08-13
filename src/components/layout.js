@@ -1,14 +1,38 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
+import styled from "styled-components"
+
+const StyledLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure layout stretches to at least full viewport height */
+`
+
+const ContentWrapper = styled.div`
+  flex: 1; /* Allow content to take up remaining space */
+  margin: 0 auto;
+  max-width: var(--size-content);
+  padding: var(--size-gutter);
+`
+
+const Footer = styled.footer`
+  margin-top: auto; /* Push the footer to the bottom */
+  text-align: center;
+  padding: var(--space-3) 0;
+  font-size: var(--font-sm);
+  background-color: #f8f8f8;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+`
+
+const FooterLink = styled.a`
+  color: #333;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,28 +46,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <StyledLayout>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
+      <ContentWrapper>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      </ContentWrapper>
+      <Footer>
+        © {new Date().getFullYear()} &middot; Built with{" "}
+        <FooterLink href="https://www.gatsbyjs.com">Gatsby</FooterLink>
+      </Footer>
+    </StyledLayout>
   )
 }
 

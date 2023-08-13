@@ -1,6 +1,6 @@
 ---
 title: "Game-Of-Death"
-date: "2022-08-21"
+date: "2022"
 description: "My first AMA :)"
 ---
 
