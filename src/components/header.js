@@ -20,10 +20,16 @@ const LogoLink = styled(Link)`
   font-weight: bold;
   text-decoration: none;
   color: #333;
+  transition: color 0.3s ease;
+  padding-left: 20px;
 
   @media (max-width: 768px) {
-    padding: 0px;
+    padding: 0;
     font-size: 15px;
+  }
+
+  &:hover {
+    color: #007bff;
   }
 `
 

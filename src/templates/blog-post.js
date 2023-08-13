@@ -12,15 +12,16 @@ const StyledBlogPost = styled.div`
   border-radius: 8px;
   text-align: center;
 
-  @media (max-width: 768px) {
-    padding: 15px;
-    border-radius: 0;
-  }
-
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #333333;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      padding: 5px;
+      margin-bottom: 0.8rem;
+    }
   }
 
   p {
@@ -28,6 +29,11 @@ const StyledBlogPost = styled.div`
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: #666666;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 
   a {
@@ -48,6 +54,11 @@ const StyledBlogPost = styled.div`
     @media (max-width: 768px) {
       height: 200px;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    border-radius: 0;
   }
 `
 

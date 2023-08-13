@@ -13,6 +13,9 @@ const Title = styled.h1`
   margin-bottom: 1rem;
   color: #333;
   text-decoration: underline;
+  text-decoration-color: #999;
+  text-underline-offset: 11px;
+  text-decoration-style: double;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -23,6 +26,7 @@ const TotalCount = styled.h4`
   font-size: 1.2rem;
   color: #666;
   text-decoration: underline;
+  text-decoration-color: #999;
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
@@ -39,7 +43,7 @@ const BlogList = styled.div`
 const BlogCard = styled.div`
   background-color: #f7f7f7;
   border: 1px solid #ddd;
-  padding: 1.5rem;
+  padding: 1.2rem;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 1.5rem;
@@ -51,21 +55,47 @@ const BlogCard = styled.div`
     transform: translateY(-5px);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
   }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
 `
 
 const BlogLink = styled(Link)`
+  color: #007bff;
+  font-weight: bold;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
 `
 
 const BlogTitle = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #007bff;
+  &:hover {
+    color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
 `
 
 const BlogExcerpt = styled.p`
   font-size: 1rem;
   color: #555;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
 `
 
 const IndexPage = ({ data }) => {
@@ -73,8 +103,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <StyledIndexPage>
-        <Title>Michael's Projects</Title>
-        <TotalCount>{data.allMarkdownRemark.totalCount} Projects</TotalCount>
+        <Title>Michael's Blog</Title>
+        <TotalCount>{data.allMarkdownRemark.totalCount} Post's</TotalCount>
         <BlogList>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <BlogCard key={node.id}>
